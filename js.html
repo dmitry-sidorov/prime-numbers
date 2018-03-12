@@ -3,12 +3,12 @@
 <head>
 	<title>JavaScript Editor</title>
 	<script>
+    //prime number detector by kv4toferm4
+
     let num = prompt("Enter a number:");
     let list = arrayMaker(num);
-    let result = main (list);
-
-
-
+    let result = main (list, num);
+    alert("Prime numbers: " + result);
 
     function arrayMaker(num) {
       let list =[];
@@ -18,22 +18,20 @@
       return list;
     }
 
-    alert(list);
-
 
     function main(list,num) {
       
-    for (let i = 0; i < list.length; i++) {
-      if (list[i]**2 < num) {
-        list = extractor(list,list[i]);
+      for (let i = 0; i < list.length; i++) {
+        while (list[i]**2 <= num) {
+          removeMultiple(list, list[i]);
+          i++;
+          }
       }
-       else return list;
+    return list;
     }
-  }
 
     
-
-    function extractor(list = [], p = 0) {
+    function removeMultiple(list = [], p = 0) {
       for (let i = 0; i < list.length; i++) {
         if ((list[i] !== p) && (list[i] % p === 0)) {
           list.splice(i,1); 
@@ -41,10 +39,6 @@
       }
       return list;
     }
-  
-    alert("Prime numbers: " + result);
-
-    
 
 	</script>
 </head>
