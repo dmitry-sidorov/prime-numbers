@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Editor</title>
+	<script>
+    let num = prompt("Enter a number:");
+    let list = arrayMaker(num);
+    let result = main (list);
+
+
+
+
+    function arrayMaker(num) {
+      let list =[];
+      for (let i = 2; i <= num; i++) {
+        list.push(i);
+      }
+      return list;
+    }
+
+    alert(list);
+
+
+    function main(list,num) {
+      
+    for (let i = 0; i < list.length; i++) {
+      if (list[i]**2 < num) {
+        list = extractor(list,list[i]);
+      }
+       else return list;
+    }
+  }
+
+    
+
+    function extractor(list = [], p = 0) {
+      for (let i = 0; i < list.length; i++) {
+        if ((list[i] !== p) && (list[i] % p === 0)) {
+          list.splice(i,1); 
+        }
+      }
+      return list;
+    }
+  
+    alert("Prime numbers: " + result);
+
+    
+
+	</script>
+</head>
+	
+
+<body>
+
+</body>
+</html>
